@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="MEMBER"
+content="width=device-width, initial-scale=1.0">
+
+<title>CHILLDEE</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- BACKGROUND -->
+
+<div class="background"></div>
+
+<div class="particles"></div>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="nav-logo">
+        CHILLDEE
+    </div>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a href="pages/member.html">
+            MEMBERS
+        </a>
+
+        <a href="pages/announcement.html">
+            NEWS
+        </a>
+
+        <a href="pages/login.html">
+            LOGIN
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="hero-logo">
+
+        <img
+        src="C:\Users\lom\Downloads\logov2_.png"
+        alt="CHILLDEE">
+
+    </div>
+
+    <h1>
+        CHILLDEE
+    </h1>
+
+    <p>
+        WELCOME TO family
+    </p>
+
+    <div class="hero-buttons">
+
+        <a
+        href="pages/member.html"
+        class="btn primary">
+
+            VIEW MEMBERS
+
+        </a>
+
+        <a
+        href="pages/announcement.html"
+        class="btn">
+
+            ANNOUNCEMENT
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+    <div class="stat">
+
+        <strong id="memberCount">
+            0
+        </strong>
+
+        <span>
+            MEMBERS
+        </span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>
+            ONLINE
+        </strong>
+
+        <span>
+            STATUS
+        </span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>
+            2026
+        </strong>
+
+        <span>
+            ESTABLISHED
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- ZONES -->
+
+<section class="container">
+
+    <div class="section-title">
+
+        <p>
+            OUR ZONES
+        </p>
+
+        <h2>
+            EXPLORE
+        </h2>
+
+    </div>
+
+
+    <div class="zones">
+
+
+        <a
+        href="pages/member.html"
+        class="zone-card">
+
+            <span class="number">
+                01
+            </span>
+
+            <div>
+
+                <h3>
+                    MEMBER ZONE
+                </h3>
+
+                <p>
+                    ดูสมาชิกทั้งหมด
+                </p>
+
+            </div>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </a>
+
+
+        <a
+        href="pages/profile.html"
+        class="zone-card">
+
+            <span class="number">
+                02
+            </span>
+
+            <div>
+
+                <h3>
+                    PROFILE
+                </h3>
+
+                <p>
+                    ดูโปรไฟล์
+                </p>
+
+            </div>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </a>
+
+
+        <a
+        href="pages/announcement.html"
+        class="zone-card">
+
+            <span class="number">
+                03
+            </span>
+
+            <div>
+
+                <h3>
+                    NEWS
+                </h3>
+
+                <p>
+                    ข่าวสารและประกาศ
+                </p>
+
+            </div>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </a>
+
+
+        <a
+        href="#"
+        class="zone-card">
+
+            <span class="number">
+                3
+            </span>
+
+            <div>
+
+                <h3>
+                    COMMUNITY
+                </h3>
+
+                <p>
+                    Community Zone
+                </p>
+
+            </div>
+
+            <span class="arrow">
+                →
+            </span>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about container">
+
+    <div>
+
+        <p class="mini-title">
+            ABOUT US
+        </p>
+
+        <h2>
+            SNOWALLSTAR
+        </h2>
+
+        <p class="description">
+
+            เว็บไซต์ Community สำหรับสมาชิก
+            รวมข้อมูล ข่าวสาร และโปรไฟล์
+            ไว้ในที่เดียว
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+        SNOWALLSTAR
+    </h3>
+
+    <p>
+        SYSTEM DESIGN © 2026
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+<!-- MUSIC PLAYER -->
+<div class="music-player">
+
+    <div class="music-disc">
+        <div class="disc-dot"></div>
+    </div>
+
+    <div class="music-details">
+        <div class="music-title">LOVE ME HARDER OV...</div>
+        <div class="music-status">
+            <span id="musicStatusDot"></span>
+            <span id="musicStatus">STOPPED</span>
+        </div>
+    </div>
+
+    <div class="volume-box">
+        <span>🔊</span>
+        <input
+            type="range"
+            id="volumeControl"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.7"
+        >
+    </div>
+
+    <button id="musicPlay">▶</button>
+
+    <audio id="bgMusic" loop>
+        <source src="C:\Users\lom\Desktop\Chilldee\music\Ariana Grande - bye [Altare Remix] - Altare (youtube).mp3" type="audio/mpeg">
+    </audio>
+
+</div>
+</body>
+
+</html>
