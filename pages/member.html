@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="th">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Members</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<nav>
+
+```
+<div class="nav-logo">
+    CHILLDEE
+</div>
+
+<div class="nav-links">
+
+    <a href="../index.html">
+        HOME
+    </a>
+
+    <a href="member.html">
+        MEMBERS
+    </a>
+
+</div>
+```
+
+</nav>
+
+<section class="container">
+
+```
+<div class="section-title">
+
+    <p>
+        COMMUNITY
+    </p>
+
+    <h2>
+        MEMBERS
+    </h2>
+
+</div>
+
+
+<a href="https://www.facebook.com/Lom Uncrownking"
+target="_blank"
+class="zone-card member-card">
+
+
+    <!-- RACHEL -->
+
+    <a href="FACEBOOK_LINK_RACHEL"
+       target="_blank"
+       class="zone-card member-card">
+
+        <img
+        src="../images/Rachel Chilldee.png"
+        class="member-image">
+
+        <div class="member-info">
+
+            <h3>
+                Rachel Chilldee
+            </h3>
+
+            <p>
+                FOUNDER · 🟢 ONLINE
+            </p>
+
+        </a>
+
+    </a>
+
+
+    <!-- KORN -->
+
+    <a href="FACEBOOK_LINK_KORN"
+       target="_blank"
+       class="zone-card member-card">
+
+        <img
+        src="../images/onstar.jpg"
+        class="member-image">
+
+        <div class="member-info">
+
+            <h3>
+                Korn Chilldee
+            </h3>
+
+            <p>
+                MEMBER · 🟢 ONLINE
+            </p>
+
+        </div>
+
+    </a>
+
+
+    <!-- LOM -->
+
+    <a href="https://www.facebook.com/Lom Uncrownking"
+       target="_blank"
+       class="zone-card member-card">
+
+        <img
+        src="../images/midaipro.jpg"
+        class="member-image">
+
+        <div class="member-info">
+
+            <h3>
+                Lom Chilldee
+            </h3>
+
+            <p>
+                MEMBER · 🟢 ONLINE
+            </p>
+
+        </div>
+
+    </a>
+
+
+    <!-- ZERIN -->
+
+    <a href="FACEBOOK_LINK_ZERIN"
+       target="_blank"
+       class="zone-card member-card">
+
+        <img
+        src="../images/Zerin ChillDee.jpg"
+        class="member-image">
+
+        <div class="member-info">
+
+            <h3>
+                Zerin ChillDee
+            </h3>
+
+            <p>
+                MEMBER · 🟢 ONLINE
+            </p>
+
+        </div>
+
+    </a>
+
+
+</div>
+```
+
+</section>
+
+<footer>
+
+```
+CHILLDEE © 2026
+```
+
+</footer>
+
+</body>
+
+</html>
+
+<div id="memberList"></div>
+
+<script>
+async function displayMembers() {
+
+    const { data, error } = await supabaseClient
+        .from("members")
+        .select("*")
+        .order("created_at", { ascending: true });
+
+    const list = document.getElementById("memberList");
+
+    if (error) {
+        list.innerHTML = "<p>โหลดสมาชิกไม่สำเร็จ</p>";
+        return;
+    }
+
+    list.innerHTML = "";
+
+    // รายการยศที่ต้องการแสดง
+    const roles = [
+        "",
+        "",
+        "FOUNDER",
+        "MEMBER"
+    ];
+
+    roles.forEach(role => {
+
+        const members = data.filter(member => member.role === role);
+
+        // ถ้าไม่มียศนี้ ไม่ต้องแสดง
+        if (members.length === 0) return;
+
+        const section = document.createElement("section");
+        section.className = "role-section";
+
+        section.innerHTML = `
+            <div class="role-header">
+                <span>${role}</span>
+                <small>${members.length} MEMBERS</small>
+            </div>
+
+            <div class="member-grid"></div>
+        `;
+
+        const grid = section.querySelector(".member-grid");
+
+        members.forEach(member => {
+
+            const card = document.createElement("div");
+            card.className = "member-card";
+
+            card.innerHTML = `
+                <img src="../images/${member.avatar}" class="member-image">
+
+                <div class="member-info">
+                    <h3>${member.name}</h3>
+                    <p>${member.status}</p>
+                </div>
+            `;
+
+            grid.appendChild(card);
+        });
+
+        list.appendChild(section);
+    });
+}
+
+displayMembers();
+</script>
+
+<script>
+const roleInfo = {
+    OWNER: {
+        name: "OWNER",
+        description: "ผู้ดูแลสูงสุดของเว็บไซต์และชุมชน"
+    },
+
+    ADMIN: {
+        name: "ADMIN",
+        description: "ผู้ดูแลระบบและจัดการสมาชิก"
+    },
+
+    MODERATOR: {
+        name: "MODERATOR",
+        description: "ดูแลความเรียบร้อยและช่วยเหลือสมาชิก"
+    },
+
+    MEMBER: {
+        name: "MEMBER",
+        description: "สมาชิกทั่วไปของชุมชน"
+    }
+};
+
+async function displayMembers() {
+
+    const { data, error } = await supabaseClient
+        .from("members")
+        .select("*")
+        .order("created_at", {
+            ascending: true
+        });
+
+    const list = document.getElementById("memberList");
+
+    if (error) {
+        list.innerHTML = "<p>โหลดสมาชิกไม่สำเร็จ</p>";
+        return;
+    }
+
+    list.innerHTML = "";
+
+    const roles = [
+        "OWNER",
+        "ADMIN",
+        "MODERATOR",
+        "MEMBER"
+    ];
+
+    roles.forEach(role => {
+
+        const members = data.filter(
+            member => member.role === role
+        );
+
+        if (members.length === 0) return;
+
+        const info = roleInfo[role];
+
+        const section = document.createElement("section");
+
+        section.className = "role-section";
+
+        section.innerHTML = `
+            <div class="role-title">
+                <h2>${info.name}</h2>
+                <p>${info.description}</p>
+            </div>
+
+            <div class="member-grid"></div>
+        `;
+
+        const grid =
+            section.querySelector(".member-grid");
+
+        members.forEach(member => {
+
+            const card =
+                document.createElement("div");
+
+            card.className = "member-card";
+
+            card.innerHTML = `
+                <img
+                    src="../images/${member.avatar}"
+                    class="member-image"
+                >
+
+                <div class="member-info">
+
+                    <h3>${member.name}</h3>
+
+                    <span class="member-role">
+                        ${member.role}
+                    </span>
+
+                    <p>${member.status}</p>
+
+                </div>
+            `;
+
+            grid.appendChild(card);
+        });
+
+        list.appendChild(section);
+    });
+}
+
+displayMembers();
+</script>
