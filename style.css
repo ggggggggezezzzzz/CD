@@ -1,0 +1,1211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    color: white;
+
+    font-family:
+        Arial,
+        "Noto Sans Thai",
+        sans-serif;
+
+    background: #050505;
+
+    overflow-x: hidden;
+
+}
+
+
+/* BACKGROUND */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -3;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.65),
+            rgba(0,0,0,.95)
+        ),
+        url("images/bg.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+.background::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent,
+            rgba(0,0,0,.8)
+        );
+
+}
+
+
+/* NAVBAR */
+
+nav {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 6%;
+
+    background:
+        rgba(0,0,0,.45);
+
+    backdrop-filter:
+        blur(15px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+
+}
+
+
+.nav-logo {
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+
+.nav-links a {
+
+    color: #aaa;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition: .2s;
+
+}
+
+
+.nav-links a:hover {
+
+    color: white;
+
+}
+
+
+/* HERO */
+
+.hero {
+
+    min-height: 75vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+}
+
+
+.hero-logo img {
+
+    width: 120px;
+
+    height: 120px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        2px solid rgba(255,255,255,.4);
+
+    box-shadow:
+        0 0 50px rgba(255,255,255,.12);
+
+    animation:
+        float 4s ease-in-out infinite;
+
+}
+
+
+.hero h1 {
+
+    margin-top: 25px;
+
+    font-size:
+        clamp(35px, 8vw, 70px);
+
+    letter-spacing: 7px;
+
+}
+
+
+.hero p {
+
+    margin-top: 10px;
+
+    color: #888;
+
+    letter-spacing: 3px;
+
+    font-size: 12px;
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+}
+
+
+.btn {
+
+    padding: 13px 22px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    background:
+        rgba(255,255,255,.07);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: .25s;
+
+}
+
+
+.btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(255,255,255,.15);
+
+}
+
+
+.btn.primary {
+
+    background: white;
+
+    color: black;
+
+}
+
+
+/* STATS */
+
+.stats {
+
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 12px;
+
+}
+
+
+.stat {
+
+    padding: 25px 10px;
+
+    text-align: center;
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    background:
+        rgba(255,255,255,.05);
+
+    backdrop-filter:
+        blur(15px);
+
+    border-radius: 15px;
+
+}
+
+
+.stat strong {
+
+    display: block;
+
+    font-size: 22px;
+
+}
+
+
+.stat span {
+
+    display: block;
+
+    margin-top: 6px;
+
+    color: #777;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* CONTAINER */
+
+.container {
+
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: 100px auto;
+
+}
+
+
+.section-title {
+
+    margin-bottom: 25px;
+
+}
+
+
+.section-title p,
+.mini-title {
+
+    color: #777;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.section-title h2 {
+
+    font-size: 35px;
+
+    margin-top: 5px;
+
+}
+
+
+/* ZONES */
+
+.zones {
+
+    display: grid;
+
+    gap: 12px;
+
+}
+
+
+.zone-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 22px;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 16px;
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.03)
+        );
+
+    backdrop-filter:
+        blur(12px);
+
+    transition: .3s;
+
+}
+
+
+.zone-card:hover {
+
+    transform:
+        translateX(7px);
+
+    background:
+        rgba(255,255,255,.12);
+
+}
+
+
+.zone-card .number {
+
+    color: #666;
+
+    font-size: 12px;
+
+}
+
+
+.zone-card h3 {
+
+    font-size: 15px;
+
+}
+
+
+.zone-card p {
+
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 12px;
+
+}
+
+
+.arrow {
+
+    margin-left: auto;
+
+    color: #777;
+
+}
+
+
+/* ABOUT */
+
+.about {
+
+    text-align: center;
+
+}
+
+
+.about h2 {
+
+    font-size: 38px;
+
+    margin: 10px 0;
+
+}
+
+
+.description {
+
+    max-width: 500px;
+
+    margin: auto;
+
+    color: #777;
+
+    line-height: 1.8;
+
+}
+
+
+/* FOOTER */
+
+footer {
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+}
+
+
+footer h3 {
+
+    letter-spacing: 3px;
+
+}
+
+
+footer p {
+
+    margin-top: 10px;
+
+    color: #555;
+
+    font-size: 11px;
+
+}
+
+
+/* ANIMATION */
+
+@keyframes float {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    nav {
+
+        padding: 16px;
+
+    }
+
+    .nav-links {
+
+        gap: 10px;
+
+    }
+
+    .nav-links a {
+
+        font-size: 10px;
+
+    }
+
+    .hero {
+
+        min-height: 70vh;
+
+    }
+
+    .hero h1 {
+
+        letter-spacing: 4px;
+
+    }
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        width: 100%;
+
+        max-width: 300px;
+
+    }
+
+    .btn {
+
+        text-align: center;
+
+    }
+
+    .stats {
+
+        grid-template-columns:
+            1fr 1fr 1fr;
+
+    }
+
+}
+.member-image {
+
+    width: 60px;
+
+    height: 60px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,255,255,.2);
+
+}
+.profile-box {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:
+        blur(15px);
+
+}
+
+
+.big-avatar {
+
+    width: 130px;
+
+    height: 130px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        2px solid rgba(255,255,255,.3);
+
+}
+
+
+.profile-box h1 {
+
+    margin-top: 20px;
+
+}
+
+
+.role {
+
+    color: #777;
+
+    margin-top: 5px;
+
+}
+
+
+.online {
+
+    margin-top: 10px;
+
+    font-size: 12px;
+
+}
+
+
+.profile-info {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+}
+
+
+.profile-info div {
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.05);
+
+}
+
+
+.profile-info span {
+
+    display: block;
+
+    color: #666;
+
+    font-size: 9px;
+
+}
+
+
+.profile-info strong {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 11px;
+
+}
+.announcement {
+
+    padding: 25px;
+
+    margin-bottom: 12px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+}
+
+
+.announcement span {
+
+    color: #666;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.announcement h3 {
+
+    margin-top: 10px;
+
+}
+
+
+.announcement p {
+
+    margin-top: 8px;
+
+    color: #777;
+
+    font-size: 13px;
+
+}
+/* =========================
+   MUSIC PLAYER
+========================= */
+
+.music-player {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+
+    width: 317px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 5px 8px 5px 5px;
+
+    background: rgba(5, 5, 8, 0.92);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 28px;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.45),
+        inset 0 0 20px rgba(255,255,255,0.02);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    z-index: 9999;
+}
+
+/* วงกลมซ้าย */
+
+.music-disc {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.disc-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow: 0 0 10px rgba(255,255,255,.5);
+}
+
+/* ข้อมูลเพลง */
+
+.music-details {
+    width: 126px;
+    margin-left: 10px;
+
+    overflow: hidden;
+}
+
+.music-title {
+    color: white;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.music-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    margin-top: 4px;
+
+    color: #777;
+
+    font-size: 7px;
+    font-weight: 600;
+}
+
+#musicStatusDot {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #666;
+}
+
+#musicStatusDot.playing {
+    background: #fff;
+    box-shadow: 0 0 8px rgba(255,255,255,.8);
+}
+
+/* เสียง */
+
+.volume-box {
+    width: 72px;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: #777;
+
+    font-size: 10px;
+}
+
+.volume-box input {
+    width: 55px;
+    height: 3px;
+
+    cursor: pointer;
+}
+
+/* ปุ่ม Play */
+
+#musicPlay {
+    width: 32px;
+    height: 32px;
+
+    margin-left: auto;
+
+    border: none;
+    border-radius: 50%;
+
+    background: white;
+    color: black;
+
+    font-size: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+#musicPlay:hover {
+    transform: scale(1.06);
+}
+
+#musicPlay:active {
+    transform: scale(.94);
+}
+
+/* ตอนเพลงกำลังเล่น */
+
+.music-player.playing .music-disc {
+    animation: musicRotate 4s linear infinite;
+}
+
+@keyframes musicRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* มือถือ */
+
+@media (max-width: 600px) {
+
+    .music-player {
+        right: 10px;
+        bottom: 10px;
+
+        width: calc(100% - 20px);
+        max-width: 317px;
+    }
+
+    .music-details {
+        width: 105px;
+    }
+
+    .volume-box {
+        width: 60px;
+    }
+}
+.role-section {
+    margin-bottom: 50px;
+}
+
+.role-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.role-header span {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.role-header small {
+    color: #666;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.member-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 15px;
+
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.08);
+
+    transition: .3s;
+}
+
+.member-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255,255,255,.2);
+}
+
+.member-image {
+    width: 55px;
+    height: 55px;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.member-info h3 {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.member-info p {
+    margin-top: 5px;
+    color: #777;
+    font-size: 9px;
+}
+
+@media (max-width: 700px) {
+
+    .member-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.role-section {
+    margin-bottom: 60px;
+}
+
+.role-title {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.role-title h2 {
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.role-title p {
+    margin-top: 7px;
+
+    color: #777;
+    font-size: 11px;
+}
+
+.member-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.member-card {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 15px;
+
+    background: rgba(255,255,255,.03);
+
+    border: 1px solid
+        rgba(255,255,255,.08);
+
+    border-radius: 12px;
+
+    transition: .3s;
+}
+
+.member-card:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(255,255,255,.2);
+}
+
+.member-image {
+    width: 55px;
+    height: 55px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+.member-info h3 {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.member-role {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    font-size: 8px;
+    letter-spacing: 1px;
+
+    color: #aaa;
+}
+
+.member-info p {
+    margin-top: 4px;
+
+    font-size: 9px;
+    color: #555;
+}
+
+@media (max-width: 700px) {
+
+    .member-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.role-title {
+    margin-bottom: 22px;
+    padding: 18px 20px;
+
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px;
+
+    background: rgba(255,255,255,.025);
+}
+
+.role-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.role-name h2 {
+    font-size: 16px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.role-icon {
+    font-size: 20px;
+}
+
+.role-title p {
+    margin-top: 7px;
+    color: #777;
+    font-size: 10px;
+}
+
+/* FOUNDER */
+
+.role-title.founder {
+    border-color: rgba(255,215,100,.25);
+}
+
+.role-title.founder .role-icon,
+.role-title.founder h2 {
+    color: #e8d08a;
+}
+
+/* MANAGEMENT */
+
+.role-title.management {
+    border-color: rgba(200,200,255,.2);
+}
+
+.role-title.management .role-icon,
+.role-title.management h2 {
+    color: #c9c9e8;
+}
+
+/* STAFF */
+
+.role-title.staff {
+    border-color: rgba(180,200,220,.18);
+}
+
+.role-title.staff .role-icon,
+.role-title.staff h2 {
+    color: #aebdcc;
+}
+
+/* MEMBER */
+
+.role-title.member {
+    border-color: rgba(255,255,255,.08);
+}
+
+.role-title.member .role-icon,
+.role-title.member h2 {
+    color: #aaa;
+}
